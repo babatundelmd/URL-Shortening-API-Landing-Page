@@ -10,15 +10,18 @@ nav ul li {
     list-style-type: none;
     display: inline-block;
     padding: 10px;
+    overflow: hidden;
+    margin: 0;
 }
-.shortly-right{
 
+.move-right {
+    float: right;
+   margin-left: 550px;
 }
 
-.shortly-right ul li{
-    list-style-type: none;
-    display: inline-block;
-    padding: 10px;
-
-
+.move-right li:last-child{
+    border-radius: 50px;
+    background-color: hsl(180, 66%, 49%);
+    color: white;
+    padding: 8px 18px;
 }

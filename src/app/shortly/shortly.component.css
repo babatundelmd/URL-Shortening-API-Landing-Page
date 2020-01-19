@@ -90,4 +90,5 @@ nav ul li:last-child:hover{
 .shortly-half{
     background: hsl(0, 0%, 75%);
    width: 100%;
+   padding: 0 13%;
 }

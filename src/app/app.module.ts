@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { ShortlyComponent } from './shortly/shortly.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ShortlyService } from './services/shortly.service';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -13,7 +15,9 @@ import { ShortlyService } from './services/shortly.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
     ShortlyService

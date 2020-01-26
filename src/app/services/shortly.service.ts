@@ -13,7 +13,7 @@ export class ShortlyService {
   constructor (private http: HttpClient) { }
 
 
-  postURL (URL: string) {
+  postURL (URL: any) {
     return this.http.post(this.post, URL).pipe(
       map((response) => {
         if (response) response

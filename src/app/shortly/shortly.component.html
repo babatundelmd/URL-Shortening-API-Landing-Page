@@ -228,12 +228,12 @@
 
 <div class="shortly-half">
   <div class="overlap-div">
-    <div class="input-search">
-      <form [formGroup]="formData" (ngSubmit)="shorten(formData.value)">
-        <input type="search" placeholder="Shorten a link here..." formControlName="url">
-        <button type="submit" [disabled]="!formData.value">Shorten it!</button>
-      </form>
+    <!-- <div class="input-search"> -->
+    <form [formGroup]="formData" (ngSubmit)="shorten(formData.value)" class="input-search">
+      <input type="search" placeholder="Shorten a link here..." formControlName="url">
+      <button type="submit" [disabled]="!formData.value">Shorten it!</button>
+    </form>
 
-    </div>
+    <!-- </div> -->
   </div>
 </div>

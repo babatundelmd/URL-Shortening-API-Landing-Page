@@ -8,29 +8,26 @@ import { map } from 'rxjs/operators';
 })
 export class ShortlyService {
 
-  private post = 'https://news.ycombinator.com';
+  private post = 'https://rel.ink/api/links/';
 
   constructor (private http: HttpClient) { }
 
 
   postURL (URL: any) {
-    return this.http.post(this.post, URL).pipe(
-      map((response) => {
-        if (response) response
+    return this.http.post<Response>(this.post, URL).pipe(
+      map((response: Response) => {
+        if (response) {
+          return response
+        }
       }, (error) => error)
     )
   }
 
-  getURL (URL: string) {
+  getURL (URL: any) {
     return this.http.get(`${this.post}/${URL}`).pipe(
       map((response) => {
         if (response) response
       }, (error) => error)
     )
   }
-
-
-
-
-
 }

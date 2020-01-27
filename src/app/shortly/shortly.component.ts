@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ShortlyService } from '../services/shortly.service';
 import { FormGroup, FormBuilder, FormControl, Validators, NgForm } from '@angular/forms';
-import { parse } from 'querystring';
 
 
 @Component({
@@ -18,8 +17,6 @@ export class ShortlyComponent implements OnInit {
 
   ngOnInit () {
     this.resetForm();
-    this.shorten(this.formData)
-
   }
   resetForm () {
     this.formData = this.builder.group({
@@ -29,10 +26,12 @@ export class ShortlyComponent implements OnInit {
   }
 
   shorten (formData) {
-    console.log(this.formData)
-    this.service.postURL(formData).subscribe(res => {
-      localStorage.setItem('URLDetails', JSON.stringify(res))
-      console.log(res)
+    console.log(this.formData.value)
+    this.service.postURL(this.formData.value).subscribe(res => {
+      localStorage.setItem('URLDetails', JSON.stringify(res));
+      this.resetForm();
+      console.log({ res })
+
     }, error => console.error(error))
   }
 

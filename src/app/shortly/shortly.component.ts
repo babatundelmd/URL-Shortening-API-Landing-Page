@@ -16,7 +16,10 @@ export class ShortlyComponent implements OnInit {
     private builder: FormBuilder) { }
 
   ngOnInit () {
+    const getLocal = JSON.parse(localStorage.getItem('URLDetails'));
+    console.log(getLocal)
     this.resetForm();
+
   }
   resetForm () {
     this.formData = this.builder.group({
@@ -31,7 +34,6 @@ export class ShortlyComponent implements OnInit {
       localStorage.setItem('URLDetails', JSON.stringify(res));
       this.resetForm();
       console.log({ res })
-
     }, error => console.error(error))
   }
 
